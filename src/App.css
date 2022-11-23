@@ -1,38 +1,81 @@
-.App {
+.header {
   text-align: center;
+  background-image: linear-gradient(to right, #66b3ff, #b3d9ff);
+  margin-top: 0;
+  padding: 3%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body {
+  padding-left: 2%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.message {
+  font-size: 1.2vw;
+  margin-top: 0.1%;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bodyTop {
+  padding-bottom: 1%;
+}
+
+.guesses {
+  margin-bottom: 0;
+}
+
+form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-end;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  margin-left: 1%;
+  display: inline-block;
+  height: 4vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+label {
+  font-size: 1.1vw;
+  font-weight: bold;
+}
+
+input {
+  height: 3vh;
+  width: 15vw;
+}
+
+input,
+label {
+  display: block;
+}
+
+li {
+  font-weight: bold;
+}
+
+@media (min-width: 350px) and (max-width: 800px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  label {
+    font-size: 1.5vw;
+  }
+
+  input {
+    height: 3vh;
+    width: 20vw;
+  }
+
+  button {
+    margin-left: 3%;
+  }
+
+  .message {
+    font-size: 1.4vw;
+    text-align: center;
   }
 }

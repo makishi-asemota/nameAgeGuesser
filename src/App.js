@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
+import Form from "./components/Form";
+const isOdd = require("is-odd");
 
 function App() {
+  const [input, setInput] = useState("");
+  const [names, setNames] = useState([]);
+  const [message, setMessage] = useState("");
+
+  // display message if number of guesses is odd
+  useEffect(() => {
+    if (isOdd(names.length)) {
+      setMessage("What an odd number of guesses!");
+    } else {
+      setMessage("");
+    }
+  }, [names]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="header">Name Age Guesser</h1>
+      <div className="body">
+        <div className="bodyTop">
+          <h3 className="guesses">Total Guesses: {names.length}</h3>
+          <p className="message">{message}</p>
+        </div>
+        <Form
+          input={input}
+          setInput={setInput}
+          names={names}
+          setNames={setNames}
+        />
+      </div>
+    </>
   );
 }
 
